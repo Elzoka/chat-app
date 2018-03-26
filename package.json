@@ -1,0 +1,17 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "engines": {
+    "node": "8.9.4"  
+  },
+  "author": "Mahmoud Elzoka",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
