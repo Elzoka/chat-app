@@ -7,11 +7,12 @@
     "start": "node server/server.js"
   },
   "engines": {
-    "node": "8.9.4"  
+    "node": "8.9.4"
   },
   "author": "Mahmoud Elzoka",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "socket.io": "^2.0.4"
   }
 }
