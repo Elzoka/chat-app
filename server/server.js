@@ -11,11 +11,20 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, '../public')));
 
-io.on('connection', (socket) => {
+io.on('connection', (socket)=> {
     console.log('New user is connected');
 
+    socket.emit('newMessage', {
+        from: 'mahmoud@elzoka.com',
+        text: 'Hey There',
+        createdAt: 123
+    });
+
+    socket.on('createMessage', (message) => {
+        console.log(message);
+    });
     socket.on('disconnect', () => {
-        console.log('User was disconnected');
+        console.log('User Disconnected');
     });
 });
 
