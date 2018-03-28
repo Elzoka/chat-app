@@ -19,14 +19,11 @@ io.on('connection', (socket)=> {
 
     socket.broadcast.emit('newMessage', generateMessage('Admin', 'New User joined'));
 
-    socket.on('createMessage', (message) => {
+    socket.on('createMessage', (message, callback) => {
         console.log(message);
-        // io.emit('newMessage', {
-        //     from: message.from,
-        //     text: message.text,
-        //     createdAt: new Date().getTime()
-        // });
-        socket.broadcast.emit('newMessage' ,generateMessage(message.from, message.text));
+        io.emit('newMessage',generateMessage(message.from, message.text));
+        callback('this is from the server');
+        // socket.broadcast.emit('newMessage' ,generateMessage(message.from, message.text));
     });
     socket.on('disconnect', () => {
         console.log('User Disconnected');
